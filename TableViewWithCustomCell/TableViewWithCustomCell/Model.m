@@ -11,14 +11,13 @@
 @implementation Model
 //The designated initializer
 - (id)initWithName:(NSString *)aName
-          bathroom:(NSString *)aBathroom
-           bedroom:(NSString *)aBedroom
+          bathroom:(NSString*)aBathroom
+           bedroom:(NSString*)aBedroom
              floor:(NSString *)aFloor
          thumbnail:(NSString *)aThumbnail
-             photo:(NSString *)aPhoto
+             photo:(NSArray *)aPhoto
        description:(NSString *)aDescription {
     self = [super init];
-    
     if (self) {
         self.name = aName;
         self.bathroom = aBathroom;
@@ -37,10 +36,10 @@
     return self;
 }
 
-- (id)init {
+/*- (id)init {
     self = [self initWithName:@"Undifined" bathroom:@"Undifined" bedroom:@"Undifined" floor:@"Undifined" thumbnail:@"Undifined" photo:@"Undifined" description:@"Undifined"];
     return self;
-}
+} */
 
 
 @end

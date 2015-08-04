@@ -44,6 +44,9 @@
 		F130FB161B6B7A4F00627BE7 /* KFBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F130FB0F1B6B7A4F00627BE7 /* KFBaseManager.m */; };
 		F130FB171B6B7A4F00627BE7 /* KFBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = F130FB111B6B7A4F00627BE7 /* KFBaseService.m */; };
 		F130FB181B6B7A4F00627BE7 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F130FB131B6B7A4F00627BE7 /* Model.m */; };
+		F1EA7F6E1B709352002BE99B /* 300-300.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1EA7F6D1B709352002BE99B /* 300-300.jpg */; };
+		F1EA7F731B70A9BF002BE99B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EA7F711B70A9BF002BE99B /* DetailViewController.m */; };
+		F1EA7F741B70A9BF002BE99B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EA7F721B70A9BF002BE99B /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,10 @@
 		F130FB111B6B7A4F00627BE7 /* KFBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBaseService.m; sourceTree = "<group>"; };
 		F130FB121B6B7A4F00627BE7 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		F130FB131B6B7A4F00627BE7 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		F1EA7F6D1B709352002BE99B /* 300-300.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "300-300.jpg"; sourceTree = "<group>"; };
+		F1EA7F701B70A9BF002BE99B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F1EA7F711B70A9BF002BE99B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F1EA7F721B70A9BF002BE99B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,20 +190,10 @@
 		536E44611951578400CB7948 /* TableViewWithCustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				F130FB0E1B6B7A4F00627BE7 /* KFBaseManager.h */,
-				F130FB0F1B6B7A4F00627BE7 /* KFBaseManager.m */,
-				F130FB101B6B7A4F00627BE7 /* KFBaseService.h */,
-				F130FB111B6B7A4F00627BE7 /* KFBaseService.m */,
-				F130FB121B6B7A4F00627BE7 /* Model.h */,
-				F130FB131B6B7A4F00627BE7 /* Model.m */,
-				536E448A1951580D00CB7948 /* MainViewController.h */,
-				536E448B1951580D00CB7948 /* MainViewController.m */,
-				536E448F1951589E00CB7948 /* CustomCell.h */,
-				536E44901951589E00CB7948 /* CustomCell.m */,
-				536E446A1951578400CB7948 /* AppDelegate.h */,
-				536E446B1951578400CB7948 /* AppDelegate.m */,
-				536E448C1951580D00CB7948 /* MainViewController.xib */,
-				536E4492195158CD00CB7948 /* CustomCell.xib */,
+				F1EA7F611B70852E002BE99B /* Service */,
+				F1EA7F621B70853E002BE99B /* Model */,
+				F1EA7F651B708597002BE99B /* Controller */,
+				F1EA7F671B7085CA002BE99B /* View */,
 				536E446D1951578400CB7948 /* Images.xcassets */,
 				536E44621951578400CB7948 /* Supporting Files */,
 			);
@@ -206,6 +203,7 @@
 		536E44621951578400CB7948 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1EA7F6D1B709352002BE99B /* 300-300.jpg */,
 				536E44961951607B00CB7948 /* useravatar.png */,
 				536E44631951578400CB7948 /* TableViewWithCustomCell-Info.plist */,
 				536E44641951578400CB7948 /* InfoPlist.strings */,
@@ -281,6 +279,51 @@
 				F130FAFC1B6B7A2400627BE7 /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		F1EA7F611B70852E002BE99B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F130FB0E1B6B7A4F00627BE7 /* KFBaseManager.h */,
+				F130FB0F1B6B7A4F00627BE7 /* KFBaseManager.m */,
+				F130FB101B6B7A4F00627BE7 /* KFBaseService.h */,
+				F130FB111B6B7A4F00627BE7 /* KFBaseService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		F1EA7F621B70853E002BE99B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F130FB121B6B7A4F00627BE7 /* Model.h */,
+				F130FB131B6B7A4F00627BE7 /* Model.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F1EA7F651B708597002BE99B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				536E446A1951578400CB7948 /* AppDelegate.h */,
+				536E446B1951578400CB7948 /* AppDelegate.m */,
+				536E448A1951580D00CB7948 /* MainViewController.h */,
+				536E448B1951580D00CB7948 /* MainViewController.m */,
+				536E448C1951580D00CB7948 /* MainViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F1EA7F671B7085CA002BE99B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				536E448F1951589E00CB7948 /* CustomCell.h */,
+				536E44901951589E00CB7948 /* CustomCell.m */,
+				536E4492195158CD00CB7948 /* CustomCell.xib */,
+				F1EA7F701B70A9BF002BE99B /* DetailViewController.h */,
+				F1EA7F711B70A9BF002BE99B /* DetailViewController.m */,
+				F1EA7F721B70A9BF002BE99B /* DetailViewController.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				536E44971951607B00CB7948 /* useravatar.png in Resources */,
+				F1EA7F6E1B709352002BE99B /* 300-300.jpg in Resources */,
+				F1EA7F741B70A9BF002BE99B /* DetailViewController.xib in Resources */,
 				536E44661951578400CB7948 /* InfoPlist.strings in Resources */,
 				536E448E1951580D00CB7948 /* MainViewController.xib in Resources */,
 				536E4493195158CD00CB7948 /* CustomCell.xib in Resources */,
@@ -401,6 +446,7 @@
 				F130FAFF1B6B7A2400627BE7 /* AFHTTPSessionManager.m in Sources */,
 				F130FB001B6B7A2400627BE7 /* AFNetworkReachabilityManager.m in Sources */,
 				F130FB041B6B7A2400627BE7 /* AFURLResponseSerialization.m in Sources */,
+				F1EA7F731B70A9BF002BE99B /* DetailViewController.m in Sources */,
 				F130FB0D1B6B7A2400627BE7 /* UIWebView+AFNetworking.m in Sources */,
 				F130FB051B6B7A2400627BE7 /* AFURLSessionManager.m in Sources */,
 				F130FB061B6B7A2400627BE7 /* AFNetworkActivityIndicatorManager.m in Sources */,

@@ -11,4 +11,6 @@
 
 @interface MainViewController : UIViewController
 
+@property(nonatomic, retain) NSArray *movies;
+
 @end

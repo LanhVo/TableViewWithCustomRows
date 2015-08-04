@@ -8,11 +8,13 @@
 
 #import "MainViewController.h"
 #import "CustomCell.h"
+#import "DetailViewController.h"
 #import "KFBaseService.h"
 #import "Model.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "UIImageView+AFNetworking.h"
 #import "AFNetworking.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -25,6 +27,8 @@
 @end
 
 @implementation MainViewController
+
+@synthesize movies;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,19 +60,19 @@
     NSDictionary *entry = [[NSDictionary alloc]init];
     [service requestWithData:entry url:URL success:^(NSDictionary *data) {
         
-        NSArray *jsonArray = [data valueForKeyPath:@"data.items"];
-        NSLog(@"Success:%@",[data valueForKeyPath:@"data.items.nbOfFloor"]);
-        NSMutableArray *tempData = [[NSMutableArray alloc] init];
+        self.movies = [data valueForKeyPath:@"data.items"];
+        NSLog(@"Success:%@",movies);
+       
+         NSMutableArray *tempData = [[NSMutableArray alloc] init];
         
-        for (NSDictionary *dic in jsonArray) {
+        for (NSDictionary *dic in movies) {
             Model *detail = [[Model alloc] initWithDictionary:dic];
             [tempData addObject:detail];
         }
         self.param = [[NSArray alloc] initWithArray:tempData];
         tempData = nil;
-       //NSLog(@"Bathroom, Bedroom, Floor: %@",_param);
-        
         [self.tableView reloadData];
+        
     } failed:^(NSError *error) {
         NSLog(@"Failure!!!%@",error);
         
@@ -86,6 +90,13 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.param.count;
+    
+    /* if (self.movies && self.movies.count) {
+        return self.movies.count;
+    } else {
+        return 0;
+    } */
+
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -102,23 +113,49 @@
         cell = [cellArray lastObject];
     }
     
-    [cell.userImageView setImageWithURL:[NSURL URLWithString:[self.param[indexPath.row] thumbnail]]
-placeholderImage:[UIImage imageNamed:@"useravatar"]];
-    //.image = [UIImage imageNamed:@"useravatar"];
+   /* NSDictionary *movie = [self.movies objectAtIndex:indexPath.row];
+    
+    NSURL *url = [[NSURL alloc] initWithString:[movie objectForKey:@"thumbnail"]];
+    [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
+    cell.userNameLabel.text = [movie objectForKey:@"propertyName"];
+    NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[movie objectForKey:@"nbOfBath"],[movie objectForKey:@"nbOfBed"],[movie objectForKey:@"nbOfFloor"]];
+    NSLog(@"Number of Bed:%@", nbOfBath);
+    cell.mobileNumberLabel.text = nbOfBath; */
+    
+    
+    NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.param[indexPath.row] bathroom],[self.param[indexPath.row] bedroom],[self.param[indexPath.row] floor]];
     cell.userNameLabel.text = [self.param[indexPath.row] name];
-    //[self.userNamesArray objectAtIndex:indexPath.row];
-    //[self.data[indexPath.row] name];
-    cell.mobileNumberLabel.text = [self.param[indexPath.row] desc];
-    //[self.mobileNumbersArray objectAtIndex:indexPath.row];
+    cell.mobileNumberLabel.text = nbOfBath;
+    
+    NSURL *url = [[NSURL alloc] initWithString:[self.param[indexPath.row] thumbnail]];
+    
+    [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    DetailViewController *trailsController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
 
-- (void)generateTableViewDataSource{
+    Model *data = self.param[indexPath.row];
+    trailsController.details = data;
+    //NSDictionary *movieDetail = [self.movies objectAtIndex:indexPath.row];
+    //trailsController.photoDetail = [movieDetail objectForKey:@"photos"];
+    //trailsController.descDetail = [movieDetail objectForKey:@"description"];
+    [self.navigationController pushViewController:trailsController animated:NO];
+   // NSLog(@"Details:%@",trailsController.photoDetail);
+   // NSLog(@"Description:%@",trailsController.descDetail);
+    
+    
+}
+
+
+/*- (void)generateTableViewDataSource{
     self.userNamesArray = @[@"Mohan",@"Phani",@"Narasimha",@"Koti",@"Ramesh",@"Brahmi"];
     self.mobileNumbersArray = @[@"123456",@"125678",@"987542",@"1346789",@"123466",@"1346788"];
     [self.tableView reloadData];
-}
+} */
 
 @end

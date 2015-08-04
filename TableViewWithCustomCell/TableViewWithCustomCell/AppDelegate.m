@@ -9,6 +9,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "DetailViewController.h"
 
 @implementation AppDelegate
 
@@ -20,8 +21,9 @@
     [self.window makeKeyAndVisible];
     
     MainViewController *mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:[NSBundle mainBundle]];
-    self.window.rootViewController = mainViewController;
-    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.window.rootViewController = navigationController;
+
     return YES;
 }
 

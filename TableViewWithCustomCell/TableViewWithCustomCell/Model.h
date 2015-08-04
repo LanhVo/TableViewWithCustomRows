@@ -14,7 +14,7 @@
 @property (strong, nonatomic)NSString *bedroom;
 @property (strong, nonatomic)NSString *floor;
 @property (strong, nonatomic)NSString *thumbnail;
-@property (strong, nonatomic)NSString *photo;
+@property (strong, nonatomic)NSArray *photo;
 @property (strong, nonatomic)NSString *desc;
 
 - (id)initWithName:(NSString *)aName
@@ -22,7 +22,7 @@
            bedroom:(NSString *)aBedroom
             floor:(NSString *)aFloor
          thumbnail:(NSString *)aThumbnail
-             photo:(NSString *)aPhoto
+             photo:(NSArray *)aPhoto
        description:(NSString *)aDescription;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
