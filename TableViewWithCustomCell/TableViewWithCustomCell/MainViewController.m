@@ -61,7 +61,7 @@
     [service requestWithData:entry url:URL success:^(NSDictionary *data) {
         
         self.movies = [data valueForKeyPath:@"data.items"];
-        NSLog(@"Success:%@",movies);
+        //NSLog(@"Success:%@",movies);
        
          NSMutableArray *tempData = [[NSMutableArray alloc] init];
         
@@ -123,12 +123,11 @@
     cell.mobileNumberLabel.text = nbOfBath; */
     
     
+    
     NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.param[indexPath.row] bathroom],[self.param[indexPath.row] bedroom],[self.param[indexPath.row] floor]];
     cell.userNameLabel.text = [self.param[indexPath.row] name];
     cell.mobileNumberLabel.text = nbOfBath;
-    
     NSURL *url = [[NSURL alloc] initWithString:[self.param[indexPath.row] thumbnail]];
-    
     [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
     
     return cell;
@@ -141,21 +140,15 @@
 
     Model *data = self.param[indexPath.row];
     trailsController.details = data;
+    [self.navigationController pushViewController:trailsController animated:NO];
     //NSDictionary *movieDetail = [self.movies objectAtIndex:indexPath.row];
     //trailsController.photoDetail = [movieDetail objectForKey:@"photos"];
     //trailsController.descDetail = [movieDetail objectForKey:@"description"];
-    [self.navigationController pushViewController:trailsController animated:NO];
    // NSLog(@"Details:%@",trailsController.photoDetail);
    // NSLog(@"Description:%@",trailsController.descDetail);
     
     
 }
 
-
-/*- (void)generateTableViewDataSource{
-    self.userNamesArray = @[@"Mohan",@"Phani",@"Narasimha",@"Koti",@"Ramesh",@"Brahmi"];
-    self.mobileNumbersArray = @[@"123456",@"125678",@"987542",@"1346789",@"123466",@"1346788"];
-    [self.tableView reloadData];
-} */
 
 @end

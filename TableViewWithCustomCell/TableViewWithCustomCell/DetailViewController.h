@@ -10,7 +10,4 @@
 #import "Model.h"
 @interface DetailViewController : UIViewController
 @property (nonatomic) Model *details;
-//@property (nonatomic) NSString *descDetail;
-//@property (strong, nonatomic)NSArray *photoDetail;
-
 @end

@@ -21,9 +21,6 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWR-i5-gnk">
                     <rect key="frame" x="8" y="262" width="304" height="298"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="298" id="CIc-zj-efj"/>
-                    </constraints>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -31,21 +28,22 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HKN-fX-iNP">
                     <rect key="frame" x="8" y="8" width="304" height="246"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="246" id="aij-JS-a13"/>
+                        <constraint firstAttribute="height" constant="246" id="2oh-yv-Vqo"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="EWR-i5-gnk" firstAttribute="top" secondItem="HKN-fX-iNP" secondAttribute="bottom" constant="8" symbolic="YES" id="FiM-Kz-hax"/>
-                <constraint firstItem="EWR-i5-gnk" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="GnH-nT-lYL"/>
-                <constraint firstItem="HKN-fX-iNP" firstAttribute="trailing" secondItem="EWR-i5-gnk" secondAttribute="trailing" id="LCI-op-aMa"/>
-                <constraint firstItem="EWR-i5-gnk" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="bPU-CX-0at"/>
-                <constraint firstItem="EWR-i5-gnk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="iAx-3Y-nXQ"/>
-                <constraint firstItem="EWR-i5-gnk" firstAttribute="leading" secondItem="HKN-fX-iNP" secondAttribute="leading" id="ih1-SW-FVC"/>
+                <constraint firstItem="EWR-i5-gnk" firstAttribute="top" secondItem="HKN-fX-iNP" secondAttribute="bottom" constant="8" symbolic="YES" id="Kd1-Wy-rgl"/>
+                <constraint firstItem="EWR-i5-gnk" firstAttribute="trailing" secondItem="HKN-fX-iNP" secondAttribute="trailing" id="Sbs-jR-hwX"/>
+                <constraint firstItem="HKN-fX-iNP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="Y7t-8e-DIj"/>
+                <constraint firstItem="HKN-fX-iNP" firstAttribute="leading" secondItem="EWR-i5-gnk" secondAttribute="leading" id="iqU-NW-9WN"/>
+                <constraint firstItem="HKN-fX-iNP" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="nbW-cZ-8dD"/>
+                <constraint firstItem="HKN-fX-iNP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="t5I-rd-pVF"/>
+                <constraint firstItem="EWR-i5-gnk" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="tNT-21-Txj"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="147" y="312"/>
+            <point key="canvasLocation" x="149" y="302"/>
         </view>
     </objects>
 </document>

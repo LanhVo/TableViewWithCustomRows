@@ -44,6 +44,7 @@
 		F130FB161B6B7A4F00627BE7 /* KFBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F130FB0F1B6B7A4F00627BE7 /* KFBaseManager.m */; };
 		F130FB171B6B7A4F00627BE7 /* KFBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = F130FB111B6B7A4F00627BE7 /* KFBaseService.m */; };
 		F130FB181B6B7A4F00627BE7 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F130FB131B6B7A4F00627BE7 /* Model.m */; };
+		F1B6B2751B720BC100327B24 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B6B2741B720BC100327B24 /* QuartzCore.framework */; };
 		F1EA7F6E1B709352002BE99B /* 300-300.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1EA7F6D1B709352002BE99B /* 300-300.jpg */; };
 		F1EA7F731B70A9BF002BE99B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EA7F711B70A9BF002BE99B /* DetailViewController.m */; };
 		F1EA7F741B70A9BF002BE99B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EA7F721B70A9BF002BE99B /* DetailViewController.xib */; };
@@ -125,6 +126,7 @@
 		F130FB111B6B7A4F00627BE7 /* KFBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBaseService.m; sourceTree = "<group>"; };
 		F130FB121B6B7A4F00627BE7 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		F130FB131B6B7A4F00627BE7 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		F1B6B2741B720BC100327B24 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F1EA7F6D1B709352002BE99B /* 300-300.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "300-300.jpg"; sourceTree = "<group>"; };
 		F1EA7F701B70A9BF002BE99B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F1EA7F711B70A9BF002BE99B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B6B2751B720BC100327B24 /* QuartzCore.framework in Frameworks */,
 				536E445E1951578400CB7948 /* CoreGraphics.framework in Frameworks */,
 				536E44601951578400CB7948 /* UIKit.framework in Frameworks */,
 				536E445C1951578400CB7948 /* Foundation.framework in Frameworks */,
@@ -179,6 +182,7 @@
 		536E445A1951578400CB7948 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1B6B2741B720BC100327B24 /* QuartzCore.framework */,
 				536E445B1951578400CB7948 /* Foundation.framework */,
 				536E445D1951578400CB7948 /* CoreGraphics.framework */,
 				536E445F1951578400CB7948 /* UIKit.framework */,

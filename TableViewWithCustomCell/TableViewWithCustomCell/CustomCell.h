@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface CustomCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mobileNumberLabel;
+
+@property (nonatomic) Model *cell;
+
+-(void)initwithValue;
 
 @end

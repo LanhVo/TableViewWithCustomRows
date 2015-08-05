@@ -7,8 +7,24 @@
 //
 
 #import "CustomCell.h"
-
+#import "UIImageView+AFNetworking.h"
 @implementation CustomCell
+
+
+
+
+- (void)initwithValue {
+    
+    NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.cell bathroom],[self.cell bedroom],[self.cell floor]];
+     self.userNameLabel.text = [self.cell name];
+    self.mobileNumberLabel.text = nbOfBath;
+    NSURL *url = [[NSURL alloc] initWithString:[self.cell thumbnail]];
+    [self.userImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
+    
+
+}
+
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
