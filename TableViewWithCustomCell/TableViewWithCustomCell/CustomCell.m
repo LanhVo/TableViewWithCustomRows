@@ -8,23 +8,27 @@
 
 #import "CustomCell.h"
 #import "UIImageView+AFNetworking.h"
+
+
 @implementation CustomCell
 
+@synthesize userImageView;
+@synthesize mobileNumberLabel;
+@synthesize userNameLabel;
 
 
-
-
-
-/*- (void)initwithValue {
+- (void)setData: (Model*)cell {
     
-    NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.cell bathroom],[self.cell bedroom],[self.cell floor]];
-     self.userNameLabel.text = [self.cell name];
+    self.cellData = cell;
+    self.userNameLabel.text = self.cellData.name;
+    
+   NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",self.cellData.bathroom,self.cellData.bedroom,self.cellData.floor];
     self.mobileNumberLabel.text = nbOfBath;
-    NSURL *url = [[NSURL alloc] initWithString:[self.cell thumbnail]];
+    NSURL *url = [[NSURL alloc] initWithString:[self.cellData thumbnail]];
     [self.userImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
     
 
-} */
+}
 
 
 

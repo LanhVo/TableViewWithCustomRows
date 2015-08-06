@@ -47,7 +47,6 @@
     
     //[self generateTableViewDataSource];
     [self requestPostUrl];
-    [self sendData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,12 +88,6 @@
     
 }
 
--(void)sendData
-{
-    //CustomCell *Controller = [[CustomCell alloc] init];
-    
-    //Controller.cell = movies;
-}
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -131,13 +124,20 @@
      NSLog(@"Number of Bed:%@", nbOfBath);
      cell.mobileNumberLabel.text = nbOfBath; */
     
+    CustomCell *controller = [[CustomCell alloc] init];
+    
+    Model *cellData = self.param[indexPath.row];
+    
+    [controller setData:cellData];
     
     
-    NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.param[indexPath.row] bathroom],[self.param[indexPath.row] bedroom],[self.param[indexPath.row] floor]];
+    //[CustomCell setData: cellData];
+    
+   /* NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.param[indexPath.row] bathroom],[self.param[indexPath.row] bedroom],[self.param[indexPath.row] floor]];
     cell.userNameLabel.text = [self.param[indexPath.row] name];
     cell.mobileNumberLabel.text = nbOfBath;
     NSURL *url = [[NSURL alloc] initWithString:[self.param[indexPath.row] thumbnail]];
-    [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
+    [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]]; */
     
     return cell;
 }

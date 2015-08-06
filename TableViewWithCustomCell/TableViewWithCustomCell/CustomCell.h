@@ -15,8 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mobileNumberLabel;
 
-@property(nonatomic, retain) NSArray *cell;
 
-//-(void)initwithValue;
+@property (nonatomic) Model *cellData;
+
+- (void)setData:(Model*)cell;
 
 @end
