@@ -43,9 +43,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    //[self generateTableViewDataSource];
     [self requestPostUrl];
 }
 
@@ -62,9 +59,7 @@
     [service requestWithData:entry url:URL success:^(NSDictionary *data) {
         
         self.movies = [data valueForKeyPath:@"data.items"];
-        //NSLog(@"Success:%@",movies);
-       
-         NSMutableArray *tempData = [[NSMutableArray alloc] init];
+        NSMutableArray *tempData = [[NSMutableArray alloc] init];
         
         for (NSDictionary *dic in movies) {
             Model *detail = [[Model alloc] initWithDictionary:dic];
@@ -77,7 +72,7 @@
     } failed:^(NSError *error) {
         NSLog(@"Failure!!!%@",error);
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Ninjas"
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Table"
                                                             message:[error localizedDescription]
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
@@ -92,14 +87,14 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.param.count;
-    
+}
+
     /* if (self.movies && self.movies.count) {
      return self.movies.count;
      } else {
      return 0;
      } */
     
-}
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -115,6 +110,16 @@
         cell = [cellArray lastObject];
     }
     
+    
+    CustomCell *controller = [[CustomCell alloc] init];
+    
+    Model *cellData = self.param[indexPath.row];
+    
+    [controller setData:cellData];
+    return cell;
+}
+    
+    
     /* NSDictionary *movie = [self.movies objectAtIndex:indexPath.row];
      
      NSURL *url = [[NSURL alloc] initWithString:[movie objectForKey:@"thumbnail"]];
@@ -124,23 +129,13 @@
      NSLog(@"Number of Bed:%@", nbOfBath);
      cell.mobileNumberLabel.text = nbOfBath; */
     
-    CustomCell *controller = [[CustomCell alloc] init];
-    
-    Model *cellData = self.param[indexPath.row];
-    
-    [controller setData:cellData];
-    
-    
-    //[CustomCell setData: cellData];
-    
    /* NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.param[indexPath.row] bathroom],[self.param[indexPath.row] bedroom],[self.param[indexPath.row] floor]];
     cell.userNameLabel.text = [self.param[indexPath.row] name];
     cell.mobileNumberLabel.text = nbOfBath;
     NSURL *url = [[NSURL alloc] initWithString:[self.param[indexPath.row] thumbnail]];
     [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]]; */
     
-    return cell;
-}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -150,14 +145,14 @@
     Model *data = self.param[indexPath.row];
     trailsController.details = data;
     [self.navigationController pushViewController:trailsController animated:NO];
-    //NSDictionary *movieDetail = [self.movies objectAtIndex:indexPath.row];
-    //trailsController.photoDetail = [movieDetail objectForKey:@"photos"];
-    //trailsController.descDetail = [movieDetail objectForKey:@"description"];
-    // NSLog(@"Details:%@",trailsController.photoDetail);
-    // NSLog(@"Description:%@",trailsController.descDetail);
-    
     
 }
+
+//NSDictionary *movieDetail = [self.movies objectAtIndex:indexPath.row];
+//trailsController.photoDetail = [movieDetail objectForKey:@"photos"];
+//trailsController.descDetail = [movieDetail objectForKey:@"description"];
+// NSLog(@"Details:%@",trailsController.photoDetail);
+// NSLog(@"Description:%@",trailsController.descDetail);
 
 
 @end

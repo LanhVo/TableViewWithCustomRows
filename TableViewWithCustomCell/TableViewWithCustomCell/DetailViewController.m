@@ -101,7 +101,7 @@
         NSLog(@"Left Swipe: %ld", (long)intCurrentImage);
         intCurrentImage += 1;
         CATransition *transition = [CATransition animation];
-        transition.type = kCATransitionFromRight; //Animation Types: kCATransitionFade, kCATransitionFromLeft, kCATransitionReveal, kCATransitionFromBottom
+        transition.type = kCATransitionFromRight; //Animation Types: kCATransitionFade, kCATransitionFromLeft, kCATransitionReveal,
         [self.photo.layer addAnimation:transition forKey:nil];
         [self.photo setImage:[mutArrImages objectAtIndex:intCurrentImage]];
         
@@ -116,7 +116,7 @@
         NSLog(@"Right Swipe: %ld", (long)intCurrentImage);
         intCurrentImage -= 1;
         CATransition *transition = [CATransition animation];
-        transition.type = kCATransitionPush; //Animation Types: kCATransitionFade, kCATransitionFromLeft, kCATransitionReveal, kCATransitionFromBottom
+        transition.type = kCATransitionPush; //Animation Types: kCATransitionFade, kCATransitionFromLeft, kCATransitionReveal,
         [self.photo.layer addAnimation:transition forKey:nil];
         [self.photo setImage:[mutArrImages objectAtIndex:intCurrentImage]];
     }
