@@ -13,7 +13,9 @@
 
 
 
-- (void)initwithValue {
+
+
+/*- (void)initwithValue {
     
     NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[self.cell bathroom],[self.cell bedroom],[self.cell floor]];
      self.userNameLabel.text = [self.cell name];
@@ -22,7 +24,7 @@
     [self.userImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
     
 
-}
+} */
 
 
 

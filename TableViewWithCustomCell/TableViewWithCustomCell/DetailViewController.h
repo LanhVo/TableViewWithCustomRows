@@ -10,4 +10,7 @@
 #import "Model.h"
 @interface DetailViewController : UIViewController
 @property (nonatomic) Model *details;
+-(void)animatePhoto;
+- (NSInteger)handleSwipe:(UISwipeGestureRecognizer *)swipe;
+
 @end

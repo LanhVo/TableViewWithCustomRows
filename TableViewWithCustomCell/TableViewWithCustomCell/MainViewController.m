@@ -24,6 +24,7 @@
 @property (nonatomic, strong)NSArray *data;
 @property (nonatomic, strong)NSArray *param;
 
+
 @end
 
 @implementation MainViewController
@@ -46,6 +47,7 @@
     
     //[self generateTableViewDataSource];
     [self requestPostUrl];
+    [self sendData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,16 +89,23 @@
     
 }
 
+-(void)sendData
+{
+    //CustomCell *Controller = [[CustomCell alloc] init];
+    
+    //Controller.cell = movies;
+}
+
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.param.count;
     
     /* if (self.movies && self.movies.count) {
-        return self.movies.count;
-    } else {
-        return 0;
-    } */
-
+     return self.movies.count;
+     } else {
+     return 0;
+     } */
+    
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,14 +122,14 @@
         cell = [cellArray lastObject];
     }
     
-   /* NSDictionary *movie = [self.movies objectAtIndex:indexPath.row];
-    
-    NSURL *url = [[NSURL alloc] initWithString:[movie objectForKey:@"thumbnail"]];
-    [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
-    cell.userNameLabel.text = [movie objectForKey:@"propertyName"];
-    NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[movie objectForKey:@"nbOfBath"],[movie objectForKey:@"nbOfBed"],[movie objectForKey:@"nbOfFloor"]];
-    NSLog(@"Number of Bed:%@", nbOfBath);
-    cell.mobileNumberLabel.text = nbOfBath; */
+    /* NSDictionary *movie = [self.movies objectAtIndex:indexPath.row];
+     
+     NSURL *url = [[NSURL alloc] initWithString:[movie objectForKey:@"thumbnail"]];
+     [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
+     cell.userNameLabel.text = [movie objectForKey:@"propertyName"];
+     NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",[movie objectForKey:@"nbOfBath"],[movie objectForKey:@"nbOfBed"],[movie objectForKey:@"nbOfFloor"]];
+     NSLog(@"Number of Bed:%@", nbOfBath);
+     cell.mobileNumberLabel.text = nbOfBath; */
     
     
     
@@ -137,15 +146,15 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     DetailViewController *trailsController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-
+    
     Model *data = self.param[indexPath.row];
     trailsController.details = data;
     [self.navigationController pushViewController:trailsController animated:NO];
     //NSDictionary *movieDetail = [self.movies objectAtIndex:indexPath.row];
     //trailsController.photoDetail = [movieDetail objectForKey:@"photos"];
     //trailsController.descDetail = [movieDetail objectForKey:@"description"];
-   // NSLog(@"Details:%@",trailsController.photoDetail);
-   // NSLog(@"Description:%@",trailsController.descDetail);
+    // NSLog(@"Details:%@",trailsController.photoDetail);
+    // NSLog(@"Description:%@",trailsController.descDetail);
     
     
 }
