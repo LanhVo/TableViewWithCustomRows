@@ -44,6 +44,7 @@ typedef void (^failed)(NSError *error);
                        url:(NSString*)url
                    success:(void (^)(NSDictionary* data))successBlock
                     failed:(void (^)(NSError* error))failedBlock;
+
 -(void) uploadAuthWithFileUrl:(NSString*)fileUrl
                           url:(NSString*)url
                       success:(void (^)(NSDictionary* data))successBlock

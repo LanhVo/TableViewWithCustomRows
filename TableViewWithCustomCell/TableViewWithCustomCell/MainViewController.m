@@ -115,7 +115,8 @@
     
     Model *cellData = self.param[indexPath.row];
     
-    [controller setData:cellData];
+    [controller setData:cellData returnData:cell];
+    
     return cell;
 }
     

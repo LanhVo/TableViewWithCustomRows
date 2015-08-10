@@ -8,6 +8,7 @@
 
 #import "CustomCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "MainViewController.h"
 
 
 @implementation CustomCell
@@ -17,16 +18,15 @@
 @synthesize userNameLabel;
 
 
-- (void)setData: (Model*)cell {
+- (void)setData: (Model*)cell returnData:(CustomCell*)results{
     
     self.cellData = cell;
-    self.userNameLabel.text = self.cellData.name;
+    results.userNameLabel.text = self.cellData.name;
     
    NSString *nbOfBath = [NSString stringWithFormat:@"bath: %@  bed: %@  floor: %@",self.cellData.bathroom,self.cellData.bedroom,self.cellData.floor];
-    self.mobileNumberLabel.text = nbOfBath;
+    results.mobileNumberLabel.text = nbOfBath;
     NSURL *url = [[NSURL alloc] initWithString:[self.cellData thumbnail]];
-    [self.userImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
-    
+    [results.userImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"useravatar"]];
 
 }
 

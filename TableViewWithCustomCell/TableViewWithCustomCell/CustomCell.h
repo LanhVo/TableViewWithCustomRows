@@ -18,6 +18,6 @@
 
 @property (nonatomic) Model *cellData;
 
-- (void)setData:(Model*)cell;
+- (void)setData: (Model*)cell returnData:(CustomCell*)results;
 
 @end
